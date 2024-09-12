@@ -1,0 +1,166 @@
+@import 'fontVazir';
+
+body {
+  background: rgba(0, 0, 0, 0.9);
+  margin: 0;
+  color: #fff;
+  font-family: 'Vazir', sans-serif;
+  direction: rtl;
+}
+
+.showcase::after {
+  content: '';
+  height: 100vh;
+  width: 100%;
+  background-image: url(https://image.ibb.co/gzOBup/showcase.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block;
+  filter: blur(10px);
+  -webkit-filter: blur(10px);
+  transition: all 1000ms;
+}
+
+.showcase:hover::after {
+  filter: blur(0px);
+  -webkit-filter: blur(0px);
+}
+
+.content {
+  position: absolute;
+  z-index: 1;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 350px;
+  text-align: center;
+  transition: all 1000ms;
+}
+
+.content .logo {
+  height: 180px;
+  width: 180px;
+}
+
+.content .title {
+  font-size: 2.2rem;
+  font-family: 'Vazir', sans-serif;
+  margin-top: 1rem;
+}
+
+.content .text {
+  line-height: 1.7;
+  font-family: 'Vazir', sans-serif;
+  margin-top: 1rem;
+}
+
+.signup {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2rem;
+  max-width: 400px;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin-top: 25px;
+  margin-bottom: 100px;
+}
+
+.signup h3 {
+  font-family: 'Vazir', sans-serif;
+  font-size: 1.8rem;
+  color: #fff;
+  text-align: center;
+}
+
+.input-group {
+  margin-bottom: 1.5rem;
+  text-align: right;
+}
+
+.input-group label {
+  font-family: 'Vazir', sans-serif;
+  font-weight: bold;
+  color: #fff;
+}
+
+.input-group input {
+  width: 93%;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  margin-top: 5px;
+}
+
+.input-group input::placeholder {
+  color: #ddd;
+}
+
+.btn {
+  font-family: 'Vazir', sans-serif;
+  background-color: #9d7e57;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.btn:hover {
+  background-color: #554a3c;
+}
+
+form p {
+  margin-top: 1rem;
+  color: #fff;
+}
+
+form p a {
+  color: #5c433f;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+form p a:hover {
+  text-decoration: underline;
+  color: #694e44;
+}
+
+@media (max-width: 560px) {
+  .signup {
+    padding: 2rem 1rem;
+  }
+
+  .signup h3 {
+    font-size: 1.5rem;
+  }
+
+  .input-group input {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    font-size: 14px;
+  }
+}
+
+#l3 {
+  color: #5c433f;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#l3:hover {
+  text-decoration: underline;
+  color: #694e44;
+}

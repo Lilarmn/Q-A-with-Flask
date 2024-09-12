@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Users</title>
+    <link rel="stylesheet" href="../static/top_users_style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Vazir:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="showcase">
+        <div class="content">
+            <img src="https://image.ibb.co/ims4Ep/logo.png" alt="Logo" class="logo">
+            <h1 class="title">نفرات برتر</h1>
+            <p class="text">این امتیاز بر اساس ستاره ای که طراح سوال به کاربر داده محاسبه میشود</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="top-users">
+            <h2 class="section-title">نفرات برتر</h2>
+            <div class="table-responsive-vertical shadow-z-1">
+                <table id="table" class="table table-hover table-mc-light-blue">
+                    <thead>
+                        <tr>
+                            <th>نام</th>
+                            <th>امتیاز</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in users %}
+                        <tr>
+                            <td data-title="Name">{{ item[0] }}</td>
+                            <td data-title="Score">{{ item[1] }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 BrandName. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

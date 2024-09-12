@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>پرسش و پاسخ جامعه تک - سوالات</title>
+  <link rel="stylesheet" href="../static/questions.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+  <!-- Background Showcase -->
+  <header class="showcase">
+    <div class="content">
+      <img src="https://image.ibb.co/ims4Ep/logo.png" class="logo" alt="جامعه فنی">
+      <div class="title">جامعه تک</div>
+      <div class="text">با هم همکاری کنید، یاد بگیرید و رشد کنید</div>
+    </div>
+  </header>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="#" class="logo">جامعه تک</a>
+      <div class="search-box">
+          <form action="/search" method="get" style="display: inline;">
+            <input type="text" class="search-input" name="query" placeholder="جستجو...">
+            <button class="search-btn"><i class="fas fa-search"></i></button>
+        </form>
+    </div>
+      <ul class="nav-links">
+        <li><a href="/home">خانه</a></li>
+        <li><a href="/questions">سوالات</a></li>
+        <li><a href="/topUsers">نفرات برتر</a></li>
+        <li><a href="/logout">خروج</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="qa-section">
+  <div class="container">
+    <div class="ask-question">
+      <h2>پرسش سوال</h2>
+      <form action="/questions" method="post">
+        <textarea name="question" id="question" rows="5" placeholder="سوال خود را اینجا بنویسید..." required>{{ question_data or '' }}</textarea>
+        <button type="submit" class="btn">ارسال سوال</button>
+        <p><a href="/voice">تبدیل صدا به متن</a></p>
+      </form>
+    </div>
+
+    <div class="questions-list">
+      <h2>سوالات اخیر</h2>
+      {% for question in questions %}
+      <div class="question-item">
+        <h3>{{ question[1] }}</h3>
+        <p><a href="/questions/{{ question[-1] }}">مشاهده</a></p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>جامعه تکنولوژی - پاسخ‌ها</title>
+  <link rel="stylesheet" href="../static/viewAnswer.css">
+  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgb(0,0,0);
+      background-color: rgba(0,0,0,0.4);
+    }
+    .modal-content {
+      background-color: #fefefe;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 500px;
+    }
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Showcase -->
+  <header class="showcase">
+    <div class="content">
+      <img src="https://image.ibb.co/ims4Ep/logo.png" class="logo" alt="Tech Community">
+    </div>
+  </header>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="/questions" class="logo">جامعه تک</a>
+      <ul class="nav-links">
+        <li><a href="/home">خانه</a></li>
+        <li><a href="/questions">سوالات</a></li>
+        <li><a href="/topUsers">نفرات برتر</a></li>
+        <li><a href="/logout">خروج</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Q&A Section -->
+  <section class="qa-section">
+    <div class="container">
+      <!-- Selected Question -->
+      <div class="question-item">
+        <div>
+          <h3>{{ question[1] }}</h3>
+          <p><strong>{{ question[2] }}</strong></p>
+        </div>
+      </div>
+
+      <!-- Answers List -->
+      <div class="answers-list">
+        <h2>پاسخ‌ها</h2>
+        {% for answer in answers %}
+        <div class="answer-item">
+          <strong class="answer-user">{{ answer[-2] }}</strong><br>
+          <span class="answer-text">{{ answer[-1] }}</span>
+          {% if isAdmin %}
+          <div class="like-dislike">
+            <p><a href="#" class="rate-link" data-username="{{ answer[-2] }}" style="color: #758694;">اهدای ستاره ⭐️</a></p>
+          </div>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <!-- Add an Answer -->
+    <div class="add-answer">
+      <h2>پاسخ خود را اضافه کنید</h2>
+      <form action="/questions/{{ question_id }}" method="post" id="answerForm">
+        <textarea name="answer" id="answer" rows="5" placeholder="پاسخ خود را اینجا تایپ کنید..." required></textarea>
+        <button type="submit" class="btn">ارسال پاسخ</button>
+      </form>
+    </div>
+
+  </section>
+
+  <!-- The Modal -->
+      <div id="starModal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="ratingForm" action="/questions/{{ question_id }}" method="post">
+              <input type="hidden" id="usernameValue" name="usernameValue" value="">
+              <div class="rate">
+                <input type="radio" id="star5" name="rate" value="5">
+                <label for="star5" title="text">5 stars</label>
+                <input type="radio" id="star4" name="rate" value="4">
+                <label for="star4" title="text">4 stars</label>
+                <input type="radio" id="star3" name="rate" value="3">
+                <label for="star3" title="text">3 stars</label>
+                <input type="radio" id="star2" name="rate" value="2">
+                <label for="star2" title="text">2 stars</label>
+                <input type="radio" id="star1" name="rate" value="1">
+                <label for="star1" title="text">1 star</label>
+              </div>
+              <input type="hidden" id="ratingValue" name="ratingValue" value="">
+              <button id="submitButton" type="submit">ارسال</button>
+            </form>
+          </div>
+        </div>
+
+<script>
+  var modal = document.getElementById("starModal");
+  var span = document.getElementsByClassName("close")[0];
+  var rateLinks = document.getElementsByClassName("rate-link");
+
+  for (var i = 0; i < rateLinks.length; i++) {
+    rateLinks[i].onclick = function(event) {
+      event.preventDefault();
+      var username = this.getAttribute("data-username");
+      document.getElementById("usernameValue").value = username;
+      modal.style.display = "block";
+    }
+  }
+
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+
+  // Add event listener to update the hidden ratingValue input when a star is clicked
+  var rateInputs = document.getElementsByName('rate');
+  for (var i = 0; i < rateInputs.length; i++) {
+    rateInputs[i].onclick = function() {
+      document.getElementById("ratingValue").value = this.value;
+    }
+  }
+</script>
+</body>
+</html>

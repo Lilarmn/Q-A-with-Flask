@@ -1,0 +1,128 @@
+@import "fontVazir.css";
+
+body {
+    background-color: #1a1a1a;
+    margin: 0;
+    color: #fff;
+    font-family: 'Vazir', sans-serif; 
+    direction: rtl; 
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+/* Profile Header */
+.profile-header {
+    background-color: #272727;
+    padding: 2rem 0;
+    text-align: center;
+    border-bottom: 2px solid #444;
+    margin-bottom: 2rem;
+}
+
+.profile-info {
+    text-align: center;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #9d7e57; /* Border color matching theme */
+    margin-bottom: 1rem;
+}
+
+.username {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.bio {
+    font-size: 1rem;
+    color: #ddd;
+}
+
+/* Profile Content */
+.profile-content {
+    background-color: #1a1a1a;
+    padding: 2rem 0;
+}
+
+.recent-activity, .account-settings {
+    background-color: #272727;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.recent-activity h2, .account-settings h2 {
+    margin-bottom: 1.5rem;
+    color: #fff;
+    border-bottom: 2px solid #9d7e57;
+    padding-bottom: 0.5rem;
+}
+
+.recent-activity ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.recent-activity li {
+    margin-bottom: 1rem;
+}
+
+.recent-activity li a {
+    color: #9d7e57;
+    text-decoration: none;
+}
+
+.recent-activity li a:hover {
+    text-decoration: underline;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+    text-align: right;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.input-group textarea {
+    resize: none;
+}
+
+.btn {
+    background-color: #9d7e57;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #796b5a;
+}

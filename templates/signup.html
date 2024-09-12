@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ایجاد حساب کاربری - Code Hub</title>
+  <link rel="stylesheet" href="../static/signUp.css">
+  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css" rel="stylesheet" type="text/css" />
+    <style>
+        .alert-for-taken-user {
+            font-size: 18px;
+            color: red !important;
+        }
+    </style>
+</head>
+<body>
+  <header class="showcase">
+    <section class="signup">
+      <div class="container center">
+        <h3>ایجاد حساب کاربری</h3>
+          {% if error %}
+            <div class="alert-for-taken-user" role="alert">
+                {{ error }}
+            </div>
+          {% endif %}
+        <form action="/signup" method="post">
+          <div class="input-group">
+            <label for="email">ایمیل</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="input-group">
+            <label for="instagram-id">آیدی اینستاگرام</label>
+            <input type="text" id="instagram-id" name="instagram-id" required>
+          </div>
+          <div class="input-group">
+            <label for="password">رمز عبور</label>
+            <input type="password" id="password" name="password" required>
+          </div>
+          <div class="input-group">
+            <label for="repeat-password">تکرار رمز عبور</label>
+            <input type="password" id="repeat-password" name="repeat-password" required>
+          </div>
+          <button type="submit" class="btn">ثبت نام</button>
+
+           <script>
+                function validatePassword() {
+                    const passwordInput = document.getElementById('password');
+                    const errorMessage = document.getElementById('error-message');
+
+                    if (passwordInput.value.length < 8) {
+                        errorMessage.textContent = "Password must be at least 8 characters long.";
+                    } else {
+                        errorMessage.textContent = "";
+                    }
+                }
+            </script>
+
+        </form>
+        <p>حساب کاربری دارید؟ <a id="l3" href="/login">ورود</a></p>
+      </div>
+    </section>
+  </header>
+</body>
+</html>

@@ -1,0 +1,288 @@
+
+@import "fontVazir.css";
+body {
+    font-family: 'Vazir', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    direction: rtl;
+}
+
+
+
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* Background Showcase */
+.showcase {
+    position: relative;
+    z-index: 1; 
+}
+
+.showcase::after {
+    content: '';
+    height: 100vh;
+    width: 100%;
+    background-image: url('https://image.ibb.co/gzOBup/showcase.jpg'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+    transition: all 1000ms;
+}
+
+.showcase:hover::after {
+    filter: blur(0px);
+    -webkit-filter: blur(0px);
+}
+
+.showcase .content {
+    position: absolute;
+    z-index: 2; 
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    text-align: center;
+    color: #fff;
+    width: 80%;
+}
+
+.showcase .logo {
+    height: 180px;
+    width: 180px;
+    margin-top: 10px;
+}
+
+.showcase .title {
+    font-size: 2.5rem;
+    margin-top: 1rem;
+}
+
+.showcase .text {
+    line-height: 1.7;
+    margin-top: 1rem;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.5); 
+    color: #fff;
+    padding: 0.5rem 0;
+    position: fixed; 
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 3; 
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.navbar .nav-links li {
+    margin-left: 20px;
+}
+
+.navbar .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.navbar .nav-links a:hover {
+    color: #FF6347;
+}
+
+ /* Search Box Styles */
+ .search-box {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 480px;
+  }
+  
+  .search-input {
+    padding: 5px 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  .search-btn {
+    background-color: #77434a;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 5px; 
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .search-btn i {
+    font-size: 1rem;
+  }
+  
+  .search-btn:hover {
+    background-color: #ff4500; 
+  }
+  
+
+/* Q&A Section */
+.qa-section {
+    padding: 2rem 0;
+    position: relative;
+    z-index: 1;
+    margin-top: -230px; 
+}
+
+.qa-section .container {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.7); 
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px); 
+}
+
+.qa-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    margin-left: 5px;
+    color: #898585;
+    font-weight: 700; 
+}
+
+.ask-question {
+    margin-bottom: 2rem;
+}
+
+.ask-question textarea {
+    width: 97%;
+    padding: 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    resize: vertical;
+}
+
+.btn {
+    background-color: #77434a;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: 600; 
+}
+
+.btn:hover {
+    background-color: #553b3f;
+}
+
+.questions-list {
+    list-style: none;
+    padding: 0;
+}
+
+.questions-list .question-item {
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    background-color: #fafafa;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.questions-list .question-item h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 600; 
+}
+
+.questions-list .question-item p {
+    margin: 0.5rem 0;
+    color: #777;
+}
+
+.questions-list .view-answers {
+    color: #77434a;
+    text-decoration: none;
+}
+
+.questions-list .view-answers:hover {
+    text-decoration: underline;
+}
+
+/* Like/Dislike Styles */
+.like-dislike {
+    display: flex;
+    align-items: center;
+}
+
+.like-dislike button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #333;
+    font-size: 1.2rem;
+    margin-right: 5px;
+    outline: none;
+}
+
+.like-dislike button:hover {
+    color: #77434a;
+}
+
+.like-dislike span {
+    font-size: 1rem;
+    color: #555;
+    margin-right: 15px;
+}
+
+/* Small Screens */
+@media (max-width: 560px) {
+    .showcase .content {
+        top: 10%;
+    }
+
+    .qa-section {
+        padding: 2rem 1rem;
+    }
+
+    .questions-list .question-item {
+        padding: 1rem;
+    }
+
+    .like-dislike {
+        margin-top: 10px;
+        justify-content: space-between;
+        width: 100%;
+    }
+}

@@ -1,0 +1,161 @@
+@import 'fontVazir.css';
+
+body {
+    background: rgba(0, 0, 0, 0.9);
+    margin: 0;
+    color: #fff;
+    font-family: 'Vazir', sans-serif; 
+    direction: rtl; 
+}
+
+.showcase::after {
+    content: '';
+    height: 100vh;
+    width: 100%;
+    background-image: url(https://image.ibb.co/gzOBup/showcase.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+    transition: all 1000ms;
+}
+
+.showcase:hover::after {
+    filter: blur(0px);
+    -webkit-filter: blur(0px);
+}
+
+.content {
+    position: absolute;
+    z-index: 1;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 350px;
+    text-align: center;
+    transition: all 1000ms;
+}
+
+.content .logo {
+    height: 180px;
+    width: 180px;
+}
+
+.content .title {
+    font-size: 2.2rem;
+    margin-top: 1rem;
+}
+
+.content .text {
+    line-height: 1.7;
+    margin-top: 1rem;
+}
+
+/* Login Section */
+.login {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2rem;
+    max-width: 400px;
+    background-color: rgba(0, 0, 0, 0.8); 
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding-left: 40px;
+}
+
+.login h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: #fff;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+    text-align: right; 
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.input-group input::placeholder {
+    color: #ddd;
+}
+
+.btn {
+    background-color: #9d7e57;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.btn:hover {
+    background-color: #796b5a;
+}
+
+form p {
+    margin-top: 1rem;
+    color: #fff;
+}
+
+form p a {
+    color: #324232;
+    text-decoration: none;
+}
+
+form p a:hover {
+    text-decoration: underline;
+}
+
+/* Small Screens */
+@media (max-width: 560px) {
+    .login {
+        padding: 2rem 1rem;
+    }
+
+    .login h3 {
+        font-size: 1.5rem;
+    }
+
+    .input-group input {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        font-size: 14px;
+    }
+}
+
+#l2 {
+    color: #5c433f; 
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#l2:hover {
+    text-decoration: underline;
+    color: #694e44; 
+}

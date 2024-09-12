@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forgot Password - Code Hub</title>
+  <link rel="stylesheet" href="../static/forget.css">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="showcase">
+    
+
+    <section class="forgot-password-section">
+      <div class="container center">
+        <h3>بازیابی رمز عبور</h3>
+        <p>لطفا ایمیل خود را جهت بازیابی رمز عبور وارد نمایید</p>
+        <form action="/forget" method="post">
+          <div class="input-group">
+                <label for="email">{{ TEXT }}</label>
+                <input type="text" id="email" name="email" required>
+          </div>
+          <button type="submit" class="btn">ارسال</button>
+        </form>
+        <p>رمز عبور خود را به یاد دارید؟<a id="l2"  href="/login">وارد شوید</a></p>
+      </div>
+    </section>
+
+  </header>
+
+</body>
+</html>

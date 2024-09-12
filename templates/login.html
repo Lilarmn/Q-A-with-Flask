@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fa"> 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ورود به حساب - Code Hub</title> 
+  <link rel="stylesheet" href="../static/login.css"> 
+  
+  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css" rel="stylesheet" type="text/css" />
+    <style>
+        .alert-for-wrong-user {
+            font-size: 18px;
+            color: red !important;
+        }
+    </style>
+</head>
+<body>
+  <header class="showcase">
+   
+
+    <section class="login">
+      <div class="container center">
+        <h3>ورود به حساب کاربری شما</h3>
+          {% if error %}
+                <div class="alert-for-wrong-user" role="alert">
+                {{ error }}
+                </div>
+            {% endif %}
+        <form action="/login" method="post">
+          <div class="input-group">
+            <label for="username">نام کاربری</label> 
+            <input type="text" id="username" name="username" required>
+          </div>
+          <div class="input-group">
+            <label for="password">رمز عبور</label> 
+            <input type="password" id="password" name="password" required>
+          </div>
+          <p><a href="/forget" id="l2" class="forgot-password">رمز عبور خود را فراموش کرده‌اید؟</a></p> <!-- Changed to Farsi -->
+          <button type="submit" class="btn">ورود</button>
+        </form>
+        <p>حساب کاربری ندارید؟ <a id="l2" href="/signup">ثبت نام کنید</a></p> <!-- Changed to Farsi -->
+      </div>
+    </section>
+  </header>
+</body>
+</html>
